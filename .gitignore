@@ -1,0 +1,37 @@
+# 抓取产物与敏感数据。
+#
+# 这些内容【本来就写在仓库目录之外】（插件把数据放在会话工作区的 crawlkit-data 下），
+# 所以正常情况下仓库里不会有它们。下面几条是**保险丝**：
+# 万一有人调试时把产物拷进了仓库，别让它们被提交出去。
+#
+# ⚠️ 注意副作用：这几个名字被全局排除，所以**有意放进仓库的文件不能叫这些名字**。
+#    例如将来想随插件附带示例适配器，不要放在 `adapters/` 下 —— 它会被静默忽略
+#    （`git add` 不报错，只是没加进去）。那种情况用 `examples/` 之类的名字，
+#    或者在这里加一条 `!adapters/示例.json` 反向规则。
+
+fixtures/
+samples/
+data/
+crawlkit-data/
+
+# cookie 与凭据（绝不提交）
+*cookie*
+*credentials*
+.env
+.env.*
+*.key
+*.pem
+
+# 依赖与运行时
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+__pycache__/
+*.py[cod]
+
+# 编辑器与系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

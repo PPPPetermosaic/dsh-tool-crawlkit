@@ -1,0 +1,5 @@
+# crawlkit 的注册补丁。
+# 行的 name 必须与 package.json 的 name 完全一致 —— 写错时插件不会生效，且没有明显报错。
+- insert:
+    - id: crawlkit
+      name: 'dsh-tool-crawlkit'

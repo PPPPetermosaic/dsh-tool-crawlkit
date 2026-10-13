@@ -1,0 +1,37 @@
+{
+  "name": "dsh-tool-crawlkit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Give DSH a web data toolkit: probe where a page's data lives, generate an adapter on demand (HTML selectors or JSON API paths), harvest structured data into a local dataset, and replay saved responses offline.",
+  "type": "module",
+  "exports": {
+    ".": "./lib/plugin.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "check.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "check": "node check.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "crawler",
+    "scraper",
+    "adapter"
+  ],
+  "license": "MIT"
+}
